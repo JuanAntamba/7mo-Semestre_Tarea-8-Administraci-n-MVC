@@ -1,0 +1,156 @@
+// Importar fuente moderna de Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+// Paleta de Colores Modernos (Estilo Dashboard UI)
+$color-primario: #4f46e5; // Un índigo moderno y tecnológico
+$color-primario-hover: #4338ca;
+$color-fondo: #f3f4f6; // Gris muy claro para el fondo de la pantalla
+$color-texto: #1f2937;
+$color-borde: #d1d5db;
+$color-error: #ef4444;
+$fondo-error: #fef2f2;
+$espaciado: 2rem;
+
+// Reset básico para el body (se aplica a toda la página)
+body {
+    background-color: $color-fondo;
+    font-family: 'Poppins', sans-serif;
+    color: $color-texto;
+    margin: 0;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+// Metodología BEM sobre semántica pura
+.admin-panel {
+    width: 100%;
+    max-width: 600px; // Un poco más angosto para parecer una "tarjeta"
+    background-color: #ffffff;
+    padding: $espaciado;
+    border-radius: 16px; // Bordes bien redondeados
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05); // Sombra suave de profundidad
+
+    &__header {
+        border-bottom: 2px solid #f3f4f6;
+        margin-bottom: $espaciado;
+        padding-bottom: 1rem;
+        text-align: center;
+    }
+
+    &__title {
+        color: $color-primario;
+        margin: 0;
+        font-size: 1.75rem;
+        font-weight: 700;
+        letter-spacing: -0.5px;
+    }
+}
+
+.promo-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    &__group {
+        border: 1px solid $color-borde;
+        padding: 1.5rem;
+        border-radius: 12px;
+        background-color: #fafafa;
+        transition: border-color 0.3s ease;
+
+        &:hover {
+            border-color: #9ca3af; // Se oscurece un poco al pasar el mouse
+        }
+    }
+
+    &__legend {
+        font-weight: 600;
+        color: $color-primario;
+        padding: 0 0.75rem;
+        background-color: #fafafa;
+        border-radius: 4px;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    &__label {
+        display: block;
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+        font-size: 0.95rem;
+
+        &:first-of-type {
+            margin-top: 0; // Quita el margen al primer elemento
+        }
+    }
+
+    &__input {
+        width: 100%;
+        padding: 0.85rem 1rem;
+        border: 1px solid $color-borde;
+        border-radius: 8px;
+        box-sizing: border-box;
+        font-family: inherit;
+        font-size: 1rem;
+        color: $color-texto;
+        background-color: #ffffff;
+        transition: all 0.3s ease; // Animación suave
+
+        // Efecto visual cuando el usuario hace clic para escribir
+        &:focus {
+            outline: none;
+            border-color: $color-primario;
+            box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.15); 
+        }
+
+        // Estilo especial cuando el dropdown está bloqueado
+        &:disabled {
+            background-color: #e5e7eb;
+            cursor: not-allowed;
+            color: #6b7280;
+            border-color: #d1d5db;
+        }
+    }
+
+    &__error {
+        display: flex;
+        align-items: center;
+        color: $color-error;
+        background-color: $fondo-error;
+        padding: 1rem;
+        border-radius: 8px;
+        border-left: 4px solid $color-error;
+        font-size: 0.95rem;
+        font-weight: 600;
+    }
+
+    &__submit {
+        background-color: $color-primario;
+        color: white;
+        padding: 1rem;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 1.1rem;
+        font-weight: 600;
+        font-family: inherit;
+        box-shadow: 0 4px 6px rgba(79, 70, 229, 0.2);
+        transition: all 0.3s ease;
+
+        // Efecto de levantarse al pasar el mouse
+        &:hover {
+            background-color: $color-primario-hover;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(79, 70, 229, 0.3);
+        }
+
+        // Efecto de hundirse al hacer clic
+        &:active {
+            transform: translateY(0);
+        }
+    }
+}

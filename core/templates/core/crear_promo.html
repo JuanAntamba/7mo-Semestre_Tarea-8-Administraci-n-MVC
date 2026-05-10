@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>QuickU Admin</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'core/css/estilos.css' %}">
 </head>
 <body>
     <main class="admin-panel">
@@ -29,6 +31,24 @@
                         <option value="">Primero selecciona un local</option>
                     </select>
                 </fieldset>
+
+                <fieldset class="promo-form__group">
+                    <legend class="promo-form__legend">Parámetros del Core</legend>
+                    
+                    <label class="promo-form__label" for="descuento">% de Descuento</label>
+                    <input class="promo-form__input" type="number" id="descuento" name="porcentaje_descuento" step="0.1" required>
+
+                    <label class="promo-form__label" for="inicio">Hora Inicio</label>
+                    <input class="promo-form__input" type="time" id="inicio" name="hora_inicio" required>
+
+                    <label class="promo-form__label" for="fin">Hora Fin</label>
+                    <input class="promo-form__input" type="time" id="fin" name="hora_fin" required>
+                </fieldset>
+                    {% if error %}
+                        <output class="promo-form__error">
+                            <strong>🚨 Error del Core:</strong> {{ error }}
+                        </output>
+                    {% endif %}
                 <button class="promo-form__submit" type="submit">Guardar Promoción</button>
             </form>
         </section>

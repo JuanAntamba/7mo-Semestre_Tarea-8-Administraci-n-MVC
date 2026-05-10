@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+body {
+  background-color: #f3f4f6;
+  font-family: "Poppins", sans-serif;
+  color: #1f2937;
+  margin: 0;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.admin-panel {
+  width: 100%;
+  max-width: 600px;
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+.admin-panel__header {
+  border-bottom: 2px solid #f3f4f6;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  text-align: center;
+}
+.admin-panel__title {
+  color: #4f46e5;
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.promo-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.promo-form__group {
+  border: 1px solid #d1d5db;
+  padding: 1.5rem;
+  border-radius: 12px;
+  background-color: #fafafa;
+  transition: border-color 0.3s ease;
+}
+.promo-form__group:hover {
+  border-color: #9ca3af;
+}
+.promo-form__legend {
+  font-weight: 600;
+  color: #4f46e5;
+  padding: 0 0.75rem;
+  background-color: #fafafa;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.promo-form__label {
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+.promo-form__label:first-of-type {
+  margin-top: 0;
+}
+.promo-form__input {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 1rem;
+  color: #1f2937;
+  background-color: #ffffff;
+  transition: all 0.3s ease;
+}
+.promo-form__input:focus {
+  outline: none;
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.15);
+}
+.promo-form__input:disabled {
+  background-color: #e5e7eb;
+  cursor: not-allowed;
+  color: #6b7280;
+  border-color: #d1d5db;
+}
+.promo-form__error {
+  display: flex;
+  align-items: center;
+  color: #ef4444;
+  background-color: #fef2f2;
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 4px solid #ef4444;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+.promo-form__submit {
+  background-color: #4f46e5;
+  color: white;
+  padding: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 600;
+  font-family: inherit;
+  box-shadow: 0 4px 6px rgba(79, 70, 229, 0.2);
+  transition: all 0.3s ease;
+}
+.promo-form__submit:hover {
+  background-color: #4338ca;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(79, 70, 229, 0.3);
+}
+.promo-form__submit:active {
+  transform: translateY(0);
+}/*# sourceMappingURL=estilos.css.map */
