@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>QuickU Admin</title>
+</head>
+<body>
+    <main class="admin-panel">
+        <header class="admin-panel__header">
+            <h1 class="admin-panel__title">Crear Oferta para Matchmaking</h1>
+        </header>
+
+        <section class="admin-panel__content">
+            <form class="promo-form" method="POST">
+                {% csrf_token %}
+                <fieldset class="promo-form__group">
+                    <legend class="promo-form__legend">Selección Dinámica</legend>
+                    
+                    <label class="promo-form__label" for="local-select">Local Universitario</label>
+                    <select class="promo-form__input" id="local-select" name="local">
+                        <option value="">Selecciona un local...</option>
+                        {% for local in locales %}
+                            <option value="{{ local.id }}">{{ local.nombre }}</option>
+                        {% endfor %}
+                    </select>
+
+                    <label class="promo-form__label" for="producto-select">Producto</label>
+                    <select class="promo-form__input" id="producto-select" name="producto" disabled>
+                        <option value="">Primero selecciona un local</option>
+                    </select>
+                </fieldset>
+                <button class="promo-form__submit" type="submit">Guardar Promoción</button>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        // Lógica del Dropdown dependiente
+        document.getElementById('local-select').addEventListener('change', function() {
+            const localId = this.value;
+            const productoSelect = document.getElementById('producto-select');
+            
+            productoSelect.innerHTML = '<option value="">Cargando...</option>';
+            productoSelect.disabled = true;
+
+            if (localId) {
+                fetch(`/ajax/cargar-productos/?local_id=${localId}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        productoSelect.innerHTML = '<option value="">Selecciona el producto</option>';
+                        data.forEach(producto => {
+                            let option = document.createElement('option');
+                            option.value = producto.id;
+                            option.textContent = producto.nombre;
+                            productoSelect.appendChild(option);
+                        });
+                        productoSelect.disabled = false;
+                    });
+            }
+        });
+    </script>
+</body>
+</html>
