@@ -7,6 +7,17 @@ Este repositorio contiene la implementación del panel administrativo para **Qui
 El desarrollo se rige por principios sólidos de Ingeniería de Software, aplicando el patrón arquitectónico **MVC (Modelo-Vista-Controlador)** mediante el framework Django, garantizando la seguridad de los datos a nivel de servidor y optimizando la interfaz mediante técnicas modernas de accesibilidad web.
 
 ---
+## 🚀 Tecnologías Utilizadas
+
+[![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![Django](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white)](https://www.djangoproject.com/)
+[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/es/docs/Web/HTML)
+[![Sass](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white)](https://sass-lang.com/)
+[![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)](https://developer.mozilla.org/es/docs/Web/JavaScript)
+[![SQLite](https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white)](https://www.sqlite.org/)
+[![Render](https://img.shields.io/badge/Render-46E3B7?style=for-the-badge&logo=render&logoColor=white)](https://render.com/)
+
+---
 
 ## 🏗️ Arquitectura y Patrones de Diseño
 
@@ -39,7 +50,7 @@ La selección de inventario se gestiona mediante un flujo asíncrono implementad
 ## 💻 Stack Tecnológico
 - **Back-End:** Python 3.1x, Django 5.x
 - **Front-End:** HTML5 Semántico, SCSS, JavaScript Vainilla
-- **Base de Datos:** SQLite3 (Desarrollo local) / PostgreSQL (Producción en Render)
+- **Base de Datos:** SQLite3 (Desarrollo local y Producción mediante persistencia simulada con Fixtures en Render).
 - **Infraestructura:** Despliegue continuo gestionado con Gunicorn y automatización de procesos (`build.sh`).
 
 ---
